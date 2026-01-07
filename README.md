@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Sistema de Correlatividades Académicas (Skill Tree especificamente para la carrera de Ingeniería en Sistemas - UTN FRD)
 
-## Getting Started
+Una aplicación web moderna diseñada para visualizar y gestionar el plan de estudios universitario mediante un **grafo interactivo de nodos**. Este sistema permite a los estudiantes llevar un seguimiento detallado de su progreso académico, entendiendo visualmente qué materias desbloquean a cuáles, similar a un árbol de habilidades en juegos.
 
-First, run the development server:
+## 🚀 Características Principales
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-   **Visualización de Grafo (React Flow):** Las materias se organizan automáticamente por niveles y conexiones.
+-   **Lógica de Correlatividades:**
+    -   🔒 **Bloqueada:** Gris (Faltan correlativas).
+    -   🔵 **Habilitada:** Azul pulsante (Lista para cursar).
+    -   🟡 **Regularizada:** Amarillo (Cursada aprobada, falta final).
+    -   🟢 **Aprobada:** Verde (Materia completada).
+-   **Gestión de Notas y Aplazos:**
+    -   Validación estricta de notas de aprobación (6-10).
+    -   Registro de hasta 3 aplazos con sus notas (1-5).
+-   **Cálculo Automático de Promedios:**
+    -   **Promedio General:** Incluye notas finales y aplazos (fórmula académica estándar).
+    -   **Promedio por Materia:** Calcula el rendimiento específico en cada asignatura.
+-   **Interfaz Moderna:** Diseño "Dark Mode" con Tailwind CSS, glassmorphism y animaciones fluidas.
+-   **Persistencia de Datos:** Base de datos SQL mediante Prisma ORM y autenticación simple por email.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Stack Tecnológico
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Frontend:** [Next.js 14](https://nextjs.org/) (App Router), [React](https://react.dev/).
+-   **Estilos:** [Tailwind CSS](https://tailwindcss.com/), [Lucide React](https://lucide.dev/) (Iconos).
+-   **Visualización:** [React Flow](https://reactflow.dev/), [Dagre](https://github.com/dagrejs/dagre) (Algoritmo de ordenamiento).
+-   **Backend & DB:** [Prisma ORM](https://www.prisma.io/), SQLite (Entorno de desarrollo), API Routes de Next.js.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+> **Promedio General** = (Suma de notas de aprobación + Suma de notas de aplazos) / (Cantidad total de exámenes rendidos)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Desarrollado con ❤️ usando Next.js.
